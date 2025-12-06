@@ -10,11 +10,26 @@ export const Contact: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate API call
-    setTimeout(() => {
+    
+    const formData = new FormData(e.target as HTMLFormElement);
+    formData.append('_subject', 'Novo contato do site Sua Contabilidade');
+    formData.append('_template', 'table');
+    
+    fetch('https://formsubmit.co/ajax/miqueiasdouglas66@gmail.com', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
       setIsSubmitting(false);
       setSubmitted(true);
-    }, 1500);
+      setFormState({ name: '', email: '', phone: '', message: '' });
+    })
+    .catch(error => {
+      setIsSubmitting(false);
+      console.error('Erro ao enviar formulário:', error);
+      alert('Erro ao enviar formulário. Tente novamente.');
+    });
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -49,7 +64,7 @@ export const Contact: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="text-white font-bold">E-mail</h4>
-                  <p className="text-gray-400">contato@visaocontabilidade.com.br</p>
+                  <p className="text-gray-400">contato@suacontabilidade.com.br</p>
                 </div>
               </div>
 
@@ -81,7 +96,10 @@ export const Contact: React.FC = () => {
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-4" method="POST">
+                <input type="hidden" name="_subject" value="Novo contato do site Sua Contabilidade" />
+                <input type="hidden" name="_template" value="table" />
+                <input type="hidden" name="_captcha" value="false" />
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-400 mb-1">Nome Completo</label>
                   <input 
@@ -129,6 +147,7 @@ export const Contact: React.FC = () => {
                   <label htmlFor="service" className="block text-sm font-medium text-gray-400 mb-1">Interesse Principal</label>
                   <select 
                     id="service"
+                    name="service"
                     className="w-full bg-brand-dark/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand-blue transition-colors appearance-none"
                   >
                     <option value="abertura">Abertura de Empresa</option>

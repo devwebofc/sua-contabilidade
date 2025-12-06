@@ -9,8 +9,8 @@ export const Footer: React.FC = () => {
           
           <div className="col-span-1 md:col-span-1">
              <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-brand-blue rounded flex items-center justify-center font-bold text-lg text-white">V</div>
-              <span className="text-lg font-bold text-white">VISÃO</span>
+              <div className="w-8 h-8 bg-brand-blue rounded flex items-center justify-center font-bold text-lg text-white">S</div>
+              <span className="text-lg font-bold text-white">SUA</span>
             </div>
             <p className="text-gray-500 text-sm leading-relaxed mb-6">
               Contabilidade digital humanizada. Simplificamos a burocracia para você focar no que importa: seu sucesso.
@@ -55,7 +55,7 @@ export const Footer: React.FC = () => {
 
         <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-gray-600">
-            © {new Date().getFullYear()} Visão Contabilidade. Todos os direitos reservados.
+            © {new Date().getFullYear()} Sua Contabilidade. Todos os direitos reservados.
           </p>
           <div className="text-xs text-gray-600 flex gap-4">
             <a href="#" className="hover:text-gray-400">Termos de Uso</a>

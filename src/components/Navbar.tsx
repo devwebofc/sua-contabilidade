@@ -25,9 +25,9 @@ export const Navbar: React.FC = () => {
       <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
         {/* Logo */}
         <div className="flex items-center gap-2">
-          <div className="w-10 h-10 bg-brand-blue rounded-lg flex items-center justify-center font-bold text-2xl text-white">V</div>
+          <div className="w-10 h-10 bg-brand-blue rounded-lg flex items-center justify-center font-bold text-2xl text-white">S</div>
           <div className="flex flex-col">
-            <span className="text-xl font-bold tracking-tight text-white leading-none">VISÃO</span>
+            <span className="text-xl font-bold tracking-tight text-white leading-none">SUA</span>
             <span className="text-xs text-brand-blue font-medium tracking-widest">CONTABILIDADE</span>
           </div>
         </div>

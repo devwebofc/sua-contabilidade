@@ -22,7 +22,7 @@ export const Hero: React.FC = () => {
           </div>
 
           <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-tight">
-            Sua contabilidade com a <span className="text-brand-blue">excelência</span> de quem é referência.
+            <span className="text-brand-blue">Sua Contabilidade</span> com a excelência de quem é referência.
           </h1>
           
           <p className="text-lg text-gray-400 max-w-lg">
